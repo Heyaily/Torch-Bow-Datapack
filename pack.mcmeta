@@ -1,0 +1,34 @@
+{
+  "pack": {
+    "description": "TorchBow - place torches by shooting arrows",
+    "pack_format": 48,
+    "supported_formats": [
+      18,
+      81
+    ],
+    "min_format": 18,
+    "max_format": 121
+  },
+  "overlays": {
+    "entries": [
+      {
+        "directory": "compat_1_20_5",
+        "formats": [
+          41,
+          47
+        ],
+        "min_format": 41,
+        "max_format": 47
+      },
+      {
+        "directory": "compat_1_20_2",
+        "formats": [
+          18,
+          40
+        ],
+        "min_format": 18,
+        "max_format": 40
+      }
+    ]
+  }
+}
