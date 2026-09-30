@@ -1,0 +1,6 @@
+execute if score #debug tb.data matches 1 unless entity @s[type=player] run tellraw @a {"text":"[TB] owner is NOT a player (e.g. dispenser-shot arrow)","color":"red"}
+execute if score #debug tb.data matches 1 if entity @s[type=player] unless items entity @s weapon.offhand minecraft:torch unless items entity @s weapon.mainhand minecraft:torch run tellraw @a {"text":"[TB] owner is holding no torch","color":"red"}
+execute if score #debug tb.data matches 1 if entity @s[type=player] if items entity @s weapon.offhand minecraft:torch if items entity @s weapon.mainhand #torchbow:launchers run tellraw @a {"text":"[TB] owner offhand(torch)+mainhand(launcher) OK -> loading arrow","color":"green"}
+execute if entity @s[type=player] if items entity @s weapon.offhand minecraft:torch if items entity @s weapon.mainhand #torchbow:launchers run function torchbow:arrow/load_offhand
+execute if score #debug tb.data matches 1 if entity @s[type=player] if items entity @s weapon.mainhand minecraft:torch if items entity @s weapon.offhand #torchbow:launchers run tellraw @a {"text":"[TB] owner mainhand(torch)+offhand(launcher) OK -> loading arrow","color":"green"}
+execute if entity @s[type=player] if items entity @s weapon.mainhand minecraft:torch if items entity @s weapon.offhand #torchbow:launchers run function torchbow:arrow/load_mainhand
